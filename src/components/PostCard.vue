@@ -6,8 +6,9 @@ const post = { ...props.post }
 </script>
 
 <template>
-	<div
+	<router-link
 		class="flex pr-2 gap-2 items-center shadow-md w-1/4 flex-grow rounded overflow-hidden border-2 border-solid border-slate-50"
+		:to="{ name: 'Post', params: { id: post.id } }"
 	>
 		<img
 			src="https://via.placeholder.com/150"
@@ -15,8 +16,6 @@ const post = { ...props.post }
 			width="150"
 			height="150"
 		/>
-		<router-link :to="{ name: 'Post', params: { id: post.id } }">{{
-			post.title
-		}}</router-link>
-	</div>
+		{{ post.title }}
+	</router-link>
 </template>
